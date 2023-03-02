@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+  order-api:
+    image: ${IMAGE}:${TAG}
+    container_name: order-event-worker
+    ports:
+      - "8080:8080"
+    logging:
+      driver: awslogs
+      options:
+        awslogs-region: ap-northeast-2
+        awslogs-group: stock-event-worker-logs
